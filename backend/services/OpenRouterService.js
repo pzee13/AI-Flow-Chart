@@ -1,4 +1,4 @@
-const AI_MODEL = 'google/gemini-2.0-flash-lite-preview-02-05:free';
+const AI_MODEL = 'google/gemma-3n-e4b-it:free'
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 const callOpenRouter = async (prompt) => {

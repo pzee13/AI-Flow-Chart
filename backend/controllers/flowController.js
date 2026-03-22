@@ -3,6 +3,7 @@ const { callOpenRouter } = require('../services/OpenRouterService');
 
 
 const askAI = async (req, res) => {
+    console.log(req.body)
   const { prompt } = req.body;
 
   if (!prompt || !prompt.trim()) {
