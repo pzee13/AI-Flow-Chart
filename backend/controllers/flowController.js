@@ -36,4 +36,13 @@ const saveFlow = async (req, res) => {
   }
 };
 
-module.exports = { askAI, saveFlow };
+const getHistory = async (req, res) => {
+  try {
+    const flows = await Flow.find().sort({ createdAt: -1 }).limit(20);
+    res.status(200).json({ success: true, count: flows.length, data: flows });
+  } catch (error) {
+    console.error('getHistory error:', error.message);
+    res.status(500).json({ success: false, error: 'Failed to fetch history' });
+  }
+};
+module.exports = { askAI, saveFlow, getHistory };

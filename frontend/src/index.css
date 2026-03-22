@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* React Flow canvas background */
+.react-flow__background {
+  background: #0a0f1a;
+}
+
+.react-flow__controls {
+  background: #111827 !important;
+  border: 1px solid #1f3a55 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: #111827 !important;
+  border-bottom: 1px solid #1f3a55 !important;
+  fill: #64748b !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #1e2a3a !important;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.25s ease;
+}
