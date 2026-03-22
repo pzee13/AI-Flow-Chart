@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./database/db');
-const flowRoutes = require('./routes/flow.routes');
+const flowRoutes = require('./routes/flowRoutes');
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ connectDB();
 // Routes
 app.use('/api', flowRoutes);
 
-// Health check
+// checking 
 app.get('/', (req, res) => {
   res.json({ status: 'AI Flow API is running 🚀' });
 });
