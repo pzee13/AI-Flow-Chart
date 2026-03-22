@@ -1,5 +1,6 @@
 import React from 'react';
 import { Handle, Position } from 'reactflow';
+import ReactMarkdown from 'react-markdown';
 
 export default function ResultNode({ data }) {
   const borderClass =
@@ -28,9 +29,24 @@ export default function ResultNode({ data }) {
       </div>
 
       {/* Result */}
-      <div className="bg-[#0a0f1a] border border-[#1f3a55] rounded-lg p-3 text-xs font-mono leading-relaxed min-h-[90px] max-h-[220px] overflow-y-auto whitespace-pre-wrap break-words text-slate-200">
+      <div className="bg-[#0a0f1a] border border-[#1f3a55] rounded-lg p-3 text-xs font-mono leading-relaxed min-h-[90px] max-h-[220px] overflow-y-auto break-words text-slate-200">
         {data.value ? (
-          data.value
+          <ReactMarkdown
+            components={{
+              p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+              strong: ({ children }) => <strong className="text-sky-300 font-bold">{children}</strong>,
+              em: ({ children }) => <em className="text-violet-300">{children}</em>,
+              h1: ({ children }) => <h1 className="text-emerald-300 font-bold text-sm mb-1">{children}</h1>,
+              h2: ({ children }) => <h2 className="text-emerald-300 font-bold text-xs mb-1">{children}</h2>,
+              h3: ({ children }) => <h3 className="text-emerald-300 font-semibold text-xs mb-1">{children}</h3>,
+              ul: ({ children }) => <ul className="list-disc pl-4 mb-2 space-y-1">{children}</ul>,
+              ol: ({ children }) => <ol className="list-decimal pl-4 mb-2 space-y-1">{children}</ol>,
+              li: ({ children }) => <li className="text-slate-200">{children}</li>,
+              code: ({ children }) => <code className="bg-[#1e2a3a] text-emerald-300 px-1 py-0.5 rounded text-xs">{children}</code>,
+            }}
+          >
+            {data.value}
+          </ReactMarkdown>
         ) : (
           <span className="text-slate-600 italic">Response will appear here...</span>
         )}

@@ -21,7 +21,7 @@ const initialNodes = [
     id: '1',
     type: 'inputNode',
     position: { x: 80, y: 200 },
-    data: { label: 'Prompt Input', value: '' },
+    data: { label: 'Input Prompt', value: '' },
   },
   {
     id: '2',
@@ -41,7 +41,7 @@ const initialEdges = [
   },
 ];
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export default function App() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -135,6 +135,19 @@ export default function App() {
     }
   };
 
+  const handleClear = () => {
+  setNodes((nds) =>
+    nds.map((n) => {
+      if (n.id === '1') return { ...n, data: { ...n.data, value: '' } };
+      if (n.id === '2') return { ...n, data: { ...n.data, value: '', status: 'idle' } };
+      return n;
+    })
+  );
+  setEdges((eds) =>
+    eds.map((e) => e.id === 'e1-2' ? { ...e, animated: false } : e)
+  );
+};
+
   const handlePromptChange = (value) => {
     setNodes((nds) =>
       nds.map((n) => n.id === '1' ? { ...n, data: { ...n.data, value } } : n)
@@ -164,13 +177,19 @@ export default function App() {
       <header className="flex items-center justify-between px-6 py-3 bg-[#111827] border-b border-[#1f3a55] z-10 flex-shrink-0">
         <div className="flex flex-col gap-0.5">
           <span className="font-bold text-2xl bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent tracking-tight">
-            ⚡ AI Flow
+            ⚡ AI Flow Chat
           </span>
           <span className="text-xs text-slate-500 tracking-wide">
-            Powered by OpenRouter + MongoDB
+            Powered by OpenRouter
           </span>
         </div>
         <div className="flex items-center gap-3">
+          <button
+  onClick={handleClear}
+  className="px-4 py-2 text-sm font-semibold text-red-400 border border-red-400/50 rounded-lg hover:bg-red-400/10 transition-all"
+>
+  🗑️ Clear
+</button>
           <button
             onClick={handleShowHistory}
             className="px-4 py-2 text-sm font-semibold text-slate-400 border border-[#1f3a55] rounded-lg hover:text-white hover:border-sky-400 transition-all"
