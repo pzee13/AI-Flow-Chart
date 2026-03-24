@@ -32,7 +32,7 @@ A full-stack MERN application that lets you interact with AI through an interact
 | Frontend | React 18, Vite, React Flow, Tailwind CSS |
 | Backend | Node.js, Express.js |
 | Database | MongoDB Atlas + Mongoose |
-| AI | OpenRouter API (Gemini 2.0 Flash free) |
+| AI | OpenRouter API (google/gemma-3n-e4b-it:free) |
 | Deployment | Render.com |
 
 ---
