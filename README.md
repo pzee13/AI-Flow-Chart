@@ -15,7 +15,7 @@ A full-stack MERN application that lets you interact with AI through an interact
 
 ## ✨ Features
 
-- 🤖 **AI-powered responses** via OpenRouter (Gemini free model)
+- 🤖 **AI-powered responses** via OpenRouter (google free model)
 - 🔗 **Interactive flowchart** with React Flow — two connected nodes
 - 💾 **Save to MongoDB** — persist prompt & response to database
 - 📋 **History panel** — view and reload all saved flows
