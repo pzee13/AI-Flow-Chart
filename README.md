@@ -91,9 +91,9 @@ npm install
 Create a `.env` file inside `backend/`:
 
 ```env
-PORT=5000
-MONGO_URI=mongodb+srv://youruser:yourpassword@cluster0.xxxxx.mongodb.net/aiflow?retryWrites=true&w=majority
-OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxx
+PORT=################
+MONGO_URI=############################
+OPENROUTER_API_KEY=######################
 ```
 
 Start the backend:
