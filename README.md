@@ -1,6 +1,6 @@
 # ⚡ AI Flow — MERN Stack AI Flowchart App
 
-A full-stack MERN application that lets you interact with AI through an interactive flowchart interface. Built with **React Flow**, **OpenRouter (Gemini AI)**, **Express.js**, and **MongoDB**.
+A full-stack MERN application that lets you interact with AI through an interactive flowchart interface. Built with **React Flow**, **OpenRouter (AI)**, **Express.js**, and **MongoDB**.
 
 ![AI Flow App](https://img.shields.io/badge/Stack-MERN-green) ![React Flow](https://img.shields.io/badge/React_Flow-11.x-blue) ![OpenRouter](https://img.shields.io/badge/AI-OpenRouter-orange)
 
